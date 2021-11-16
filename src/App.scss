@@ -162,6 +162,12 @@
             &.equals {
                 grid-area: equals;
             }
+
+            &:active {
+                border-bottom: none;
+                position: relative;
+                top: 3px;
+            }
         }
     }
 }
