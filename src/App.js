@@ -1,14 +1,40 @@
 import { useState } from 'react';
 import './App.scss';
+import Calculator from './Calculator';
 
 function App() {
-  const [value, setValue] = useState(399981);
+  const [previousValue, setPreviousValue] = useState();
+  const [currentValue, setCurrentValue] = useState(399981);
   const [theme, setTheme] = useState(1);
   const [operator, setOperator] = useState();
   const [queue, setQueue] = useState();
+  // BUG: React reinitialized the calculator -- need a way to eitehr:
+  /*
+    1. retain the state in the app and reinitialize the class w/ that state (performance issue?!)
+    2. use a singleton Calculator class with its own state (major rewrite?!)
+    3. remove all state from the Calculator class (major rewrite!)
+  */
+  const calculator = new Calculator();
 
   const handleClick = (input) => {
-    console.log("TODO: calculate", input);
+    if (/^[1-9.]$/.test(input)) {
+      calculator.append(input);
+    } else if (/^\+\-\x\/\=$/.test(input)) {
+      calculator.setOperator(input);
+    } else {
+      switch(input) {
+        case 'delete':
+          calculator.remove();
+          break;
+        case 'reset':
+          calculator.clear();
+          break;
+        default:
+          return;
+      }
+    }
+    setPreviousValue(calculator.previousDisplay);
+    setCurrentValue(calculator.currentDisplay);
   };
 
   const handleThemeChange = (value) => {
@@ -34,7 +60,8 @@ function App() {
         </header>
 
         <div className="calculator-results">
-          {value.toLocaleString()}
+          <span className="previous-value">{previousValue}</span>
+          <span className="current-value">{currentValue}</span>
         </div>
 
         <div className="calculator-buttons">
@@ -45,17 +72,17 @@ function App() {
           <button type="button" className="four" onClick={() => handleClick(4)}>4</button>
           <button type="button" className="five" onClick={() => handleClick(5)}>5</button>
           <button type="button" className="six" onClick={() => handleClick(6)}>6</button>
-          <button type="button" className="plus" onClick={() => handleClick('add')}>+</button>
+          <button type="button" className="plus" onClick={() => handleClick('+')}>+</button>
           <button type="button" className="one" onClick={() => handleClick(1)}>1</button>
           <button type="button" className="two" onClick={() => handleClick(2)}>2</button>
           <button type="button" className="three" onClick={() => handleClick(3)}>3</button>
-          <button type="button" className="minus" onClick={() => handleClick('subtract')}>-</button>
+          <button type="button" className="minus" onClick={() => handleClick('-')}>-</button>
           <button type="button" className="period" onClick={() => handleClick('.')}>.</button>
           <button type="button" className="zero" onClick={() => handleClick(0)}>0</button>
-          <button type="button" className="divide" onClick={() => handleClick('divide')}>/</button>
-          <button type="button" className="multiply" onClick={() => handleClick('multiply')}>x</button>
+          <button type="button" className="divide" onClick={() => handleClick('/')}>/</button>
+          <button type="button" className="multiply" onClick={() => handleClick('x')}>x</button>
           <button type="button" className="reset" onClick={() => handleClick('reset')}>RESET</button>
-          <button type="button" className="equals" onClick={() => handleClick('equals')}>=</button>
+          <button type="button" className="equals" onClick={() => handleClick('=')}>=</button>
         </div>
       </div>
     </div>

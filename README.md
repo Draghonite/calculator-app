@@ -6,7 +6,7 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -43,11 +43,12 @@ Users should be able to:
 - Sass
 - Mobile-first workflow
 - [React](https://reactjs.org/) - React framework
+- Test-Drive Development (TDD)
 
 ### What I learned
 
 CSS Flexbox and Grid.  This project provided a great opportunity to practice 
-picture-perfect web design, SCSS and advanced layout techniques with CSS.
+picture-perfect web design, SCSS and advanced layout techniques with CSS, along with TDD.
 
 ### Continued development
 
