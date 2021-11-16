@@ -26,9 +26,9 @@ Users should be able to:
 - **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
 ### Screenshots
-![Theme 1 Screenshot](./public/screenshots/screenshot-theme1.png width=400)
-![Theme 2 Screenshot](./public/screenshots/screenshot-theme2.png width=400)
-![Theme 3 Screenshot](./public/screenshots/screenshot-theme3.png width=400)
+<img src="./public/screenshots/screenshot-theme1.png" width="400" title="Theme 1 Screenshot" />
+<img src="./public/screenshots/screenshot-theme2.png" width="400" title="Theme 2 Screenshot" />
+<img src="./public/screenshots/screenshot-theme3.png" width="400" title="Theme 3 Screenshot" />
 
 ### Links
 
