@@ -28,8 +28,10 @@ Users should be able to:
 - **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
 ### Screenshot
-
-![](./screenshot.jpg)
+s
+![Theme 1 Screenshot](./public/screenshot-theme1.png)
+![Theme 2 Screenshot](https://raw.githubusercontent.com/Draghonite/calculator-app/main/public/screenshots/screenshot-theme2.png)
+![Theme 3 Screenshot](https://raw.githubusercontent.com/Draghonite/calculator-app/main/public/screenshots/screenshot-theme3.png)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
