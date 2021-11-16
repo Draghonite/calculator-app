@@ -1,0 +1,152 @@
+
+/* Theme 1 */
+.theme1 {
+    background-color: $theme1-main-bg-color;
+
+    .calculator-container .calculator-header .app-name {
+        color: $theme1-light-text-color;
+    }
+
+    .calculator-container .calculator-header .theme-chooser {
+        .theme-chooser-label, .theme-label {
+            color: $theme1-light-text-color;
+        }
+
+        input[type=range] {            
+            background: $theme1-keypad-bg-color;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            background-color: $theme1-key-accent-1-bg-color;
+        }
+    }
+
+    .calculator-container .calculator-results {
+        background-color: $theme1-screen-bg-color;
+        color: $theme1-light-text-color;
+    }
+
+    .calculator-container .calculator-buttons {
+        background-color: $theme1-keypad-bg-color;
+
+        button {
+            border-bottom-color: $theme1-key-main-shadow-color;
+            color: $theme1-dark-text-color;
+
+            &.equals {
+                color: $theme1-light-text-color;
+                background-color: $theme1-key-accent-1-bg-color;
+                border-bottom-color: $theme1-key-accent-1-shadow-color;
+            }
+
+            &.reset, &.delete {
+                color: $theme1-light-text-color;
+                background-color: $theme1-key-accent-2-bg-color;
+                border-bottom-color: $theme1-key-accent-2-shadow-color;
+            }
+        }
+    }
+}
+
+/* Theme 2 */
+.theme2 {
+    background-color: $theme2-main-bg-color;
+
+    .calculator-container .calculator-header .app-name {
+        color: $theme2-dark-text-color;
+    }
+
+    .calculator-container .calculator-header .theme-chooser {
+        .theme-chooser-label, .theme-label {
+            color: $theme2-dark-text-color;
+        }
+
+        input[type=range] {            
+            background: $theme2-keypad-bg-color;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            background-color: $theme2-key-accent-1-bg-color;
+        }
+    }
+
+    .calculator-container .calculator-results {
+        background-color: $theme2-screen-bg-color;
+        color: $theme2-dark-text-color;
+    }
+
+    .calculator-container .calculator-buttons {
+        background-color: $theme2-keypad-bg-color;
+
+        button {
+            border-bottom-color: $theme2-key-main-shadow-color;
+            color: $theme2-dark-text-color;
+
+            &.equals {
+                color: $theme2-light-text-color;
+                background-color: $theme2-key-accent-1-bg-color;
+                border-bottom-color: $theme2-key-accent-1-shadow-color;
+            }
+
+            &.reset, &.delete {
+                color: $theme2-light-text-color;
+                background-color: $theme2-key-accent-2-bg-color;
+                border-bottom-color: $theme2-key-accent-2-shadow-color;
+            }
+        }
+    }
+}
+
+/* Theme 3 */
+.theme3 {
+    background-color: $theme3-main-bg-color;
+
+    .calculator-container .calculator-header .app-name {
+        color: $theme3-accent-text-color;
+    }
+
+    .calculator-container .calculator-header .theme-chooser {
+        .theme-chooser-label, .theme-label {
+            color: $theme3-accent-text-color;
+        }
+
+        input[type=range] {            
+            background: $theme3-keypad-bg-color;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            background-color: $theme3-key-accent-1-bg-color;
+        }
+    }
+
+    .calculator-container .calculator-results {
+        background-color: $theme3-screen-bg-color;
+        color: $theme3-accent-text-color;
+    }
+
+    .calculator-container .calculator-buttons {
+        background-color: $theme3-keypad-bg-color;
+
+        button {
+            border-bottom-color: $theme3-key-main-shadow-color;
+            color: $theme3-dark-text-color;
+            background-color: $theme3-key-main-bg-color;
+
+            &.equals {
+                color: $theme3-dark-text-color;
+                background-color: $theme3-key-accent-1-bg-color;
+                border-bottom-color: $theme3-key-accent-1-shadow-color;
+            }
+
+            &.reset, &.delete {
+                color: $theme3-light-text-color;
+                background-color: $theme3-key-accent-2-bg-color;
+                border-bottom-color: $theme3-key-accent-2-shadow-color;
+            }
+
+            &:not(.reset, .delete, .equals) {
+                color: $theme3-accent-text-color;
+            }
+        }
+    }
+}

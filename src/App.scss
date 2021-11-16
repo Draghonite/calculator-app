@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+@import './variables';
+@import './theme';
+
+* {
+    font-family: Spartan, Arial, sans-serif;
+}
+
+/* Global Styles */
+.app {    
+    height: 100vh;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    font-family: Spartan,Arial, Helvetica, sans-serif;
+}
+.calculator-container {
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+
+    .calculator-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+
+        .app-name {
+            font-size: 1.6em;
+        }
+
+        .theme-chooser {
+            color: #fff;
+            display: flex;
+            align-items: center;
+
+            .theme-chooser-label {
+                margin-right: 20px;
+                font-size: .7em;
+                align-self: flex-end;
+                margin-bottom: 6px;
+            }
+
+            .theme-options {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 9px 0 10px;
+
+                .theme-label {
+                    font-size: .7em;
+                }
+            }
+
+            input[type=range] {
+                max-width: 50px;
+            }
+
+            input[type=range] {
+                -webkit-appearance: none;
+                padding-left: 4px;
+                padding-right: 4px;
+                height: 20px;
+                background: $theme1-keypad-bg-color;
+                border-radius: 20px;
+            }
+              
+            input[type=range]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height:13px;
+                width: 13px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .calculator-results {
+        min-height: 90px;
+        font-size: 32px;
+        padding: 0 20px;
+        border: none;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        font-weight: 500;
+        margin-bottom: 18px;
+    }
+
+    .calculator-buttons {
+        border-radius: 8px;
+        padding: 20px;
+        display: grid;
+        grid-template-areas: 
+            "seven eight nine delete"
+            "four five six plus"
+            "one two three minus"
+            "period zero divide multiply"
+            "reset reset equals equals";
+        gap: 20px;
+
+        button {
+            height: 60px;
+            font-size: 25px;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            border-bottom-width: 4px;
+            border-bottom-style: solid;
+
+            &.seven {
+                grid-area: seven;
+            }
+            &.eight {
+                grid-area: eight;
+            }
+            &.nine {
+                grid-area: nine;
+            }
+            &.delete {
+                grid-area: delete;
+                font-size: 17px;
+            }
+            &.four {
+                grid-area: four;
+            }
+            &.five {
+                grid-area: five;
+            }
+            &.six {
+                grid-area: six;
+            }
+            &.plus {
+                grid-area: plus;
+            }
+            &.one {
+                grid-area: one;
+            }
+            &.two {
+                grid-area: two;
+            }
+            &.three {
+                grid-area: three;
+            }
+            &.minus {
+                grid-area: minus;
+            }
+            &.period {
+                grid-area: period;
+            }
+            &.zero {
+                grid-area: zero;
+            }
+            &.divide {
+                grid-area: divide;
+            }
+            &.multiply {
+                grid-area: multiply;
+            }
+            &.reset {
+                grid-area: reset;
+                font-size: 17px;
+            }
+            &.equals {
+                grid-area: equals;
+            }
+        }
+    }
+}
