@@ -12,6 +12,7 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
+- [Acknowledgements](#acknowledgements)
 
 ## Overview
 
@@ -48,8 +49,15 @@ Users should be able to:
 ### What I learned
 
 CSS Flexbox and Grid.  This project provided a great opportunity to practice 
-picture-perfect web design, SCSS and advanced layout techniques with CSS, along with TDD.
+picture-perfect web design, SCSS and advanced layout techniques with CSS.  This is was also a great opportunity to build out a complex class using TDD.  This also provided good practice into paying close attention to the build output in order to tidy up Sass and React build warnings for a polished final product.
 
 ### Continued development
 
-More exercise with SCSS, CSS Flexbox/Grid and React.
+More exercise with SCSS, CSS Flexbox/Grid and React.  Additionally, this is a very simple calculator and even with having strong unit tests, there are remaining edge-cases
+that leave room for improvement.
+
+# Acknowlegements
+- [Implementing a service as a single in React js](https://www.youtube.com/watch?v=HPflyT2ni20)
+  - provided a quick solution to turn a testable Calculator class into a React-friendly CalculatorService, singleton object with no loss in functionality and only very minor changes in the TDD tests and within the class/service itself
+- [Build A Calculator With JavaScript Tutorial](https://www.youtube.com/watch?v=j59qQ7YWLxw)
+  - useful tips to iron out a few commmon pitfalls of implementing this very same type of application...no copy-paste here

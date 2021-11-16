@@ -1,25 +1,18 @@
 import { useState } from 'react';
 import './App.scss';
-import Calculator from './Calculator';
+import CalculatorService from './services/CalculatorService';
 
 function App() {
   const [previousValue, setPreviousValue] = useState();
   const [currentValue, setCurrentValue] = useState(399981);
   const [theme, setTheme] = useState(1);
-  const [operator, setOperator] = useState();
-  const [queue, setQueue] = useState();
-  // BUG: React reinitialized the calculator -- need a way to eitehr:
-  /*
-    1. retain the state in the app and reinitialize the class w/ that state (performance issue?!)
-    2. use a singleton Calculator class with its own state (major rewrite?!)
-    3. remove all state from the Calculator class (major rewrite!)
-  */
-  const calculator = new Calculator();
+  // NOTE: using a singleton to keep React from losing state w/in the calculator
+  const calculator = CalculatorService.getInstance();
 
   const handleClick = (input) => {
-    if (/^[1-9.]$/.test(input)) {
+    if (/^[0-9.]$/.test(input)) {
       calculator.append(input);
-    } else if (/^\+\-\x\/\=$/.test(input)) {
+    } else if (/^[+\-x/=]$/.test(input)) {
       calculator.setOperator(input);
     } else {
       switch(input) {

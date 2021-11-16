@@ -1,13 +1,14 @@
-import Calculator from './Calculator';
+import CalculatorService from './CalculatorService';
 
-let calculator = new Calculator();
+let calculator = CalculatorService.getInstance();
 
+// NOTE: CalculatorService is meant to be a singleton, but can still be reinitialized for testing
 beforeEach(() => {
-    calculator = new Calculator();
+    calculator = new CalculatorService();
 });
 
 it('should instantiate with empty previous and current values', () => {
-    expect(calculator).toBeInstanceOf(Calculator);
+    expect(calculator).toBeInstanceOf(CalculatorService);
     expect(calculator.previousValue).toBeDefined();
     expect(calculator.previousValue.value).toBeNull();
     expect(calculator.currentValue).toBeDefined();
@@ -172,4 +173,22 @@ it('should allow decimal values when provided .123', () => {
     expect(calculator.previousDisplay).toEqual('0.123 +');
     expect(calculator.currentDisplay).toBeNull();
     expect(calculator.currentValue.value).toBeNull();
+});
+
+it('should calculate and display 46 if provided: [1,2,+,3,4,+]', () => {
+    calculator.append(1);
+    calculator.append(2);
+    calculator.setOperator('+');
+    calculator.append(3);
+    calculator.append(4);
+    calculator.setOperator('+');
+    expect(calculator.currentDisplay).toEqual('46');
+});
+
+it('should replace the operator if provided: [1,2,+,-]', () => {
+    calculator.append(1);
+    calculator.append(2);
+    calculator.setOperator('+');
+    calculator.setOperator('-');
+    expect(calculator.previousDisplay).toEqual('12 -')
 });

@@ -1,6 +1,13 @@
-class Calculator {
+class CalculatorService {
+    static myInstance = null;
+    static getInstance() {
+        if (CalculatorService.myInstance == null) {
+            CalculatorService.myInstance = new CalculatorService();
+        }
+        return this.myInstance;
+    }
+
     constructor() {
-        console.log("[CALCULATOR]: initialized");
         this.previousValue = { value: null, operator: null, display: null };
         this.currentValue = { value: null, display: null };        
     }
@@ -21,7 +28,6 @@ class Calculator {
         } else {
             this.previousValue.display = `${previous.toLocaleString()} ${operator}`;
         }
-        console.log("[UPDATEPREVIOUSDISPLAY]", this.previousDisplay);
     };
 
     updateCurrentDisplay = () => {
@@ -31,11 +37,9 @@ class Calculator {
         } else {
             this.currentValue.display = value.toLocaleString();
         }
-        console.log("[UPDATECURRENTDISPLAY]", this.currentDisplay);
     };
 
     append = (input) => {
-        // console.log("[APPEND]", input);
         // only allow 1 decimal place
         if (input === '.' && /\./.test(this.currentValue.value)) { return; }
         let newValue = `${this.currentValue.value || ""}${input.toString()}`;
@@ -44,8 +48,6 @@ class Calculator {
     };
 
     setOperator = (input) => {
-        // NOTE: only takes the operator if there is an existing value to 'operate' on
-        if (!input || !this.currentValue.value) { return; }
         if (!this.previousValue.value) {
             // set the new value as previous
             this.previousValue.value = this.currentValue.value;
@@ -53,7 +55,11 @@ class Calculator {
             this.currentValue.value = null;
             this.updatePreviousDisplay();
             this.updateCurrentDisplay();
-        } else if (input === '=') {
+        } else if (!this.currentValue.value && /^[+\-x/]$/.test(input)) {
+            // replace the operator
+            this.previousValue.operator = input;
+            this.updatePreviousDisplay();
+        } else {
             this.calculate();
         }
     };
@@ -97,4 +103,4 @@ class Calculator {
     };
 };
 
-export default Calculator;
+export default CalculatorService;
