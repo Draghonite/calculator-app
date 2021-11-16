@@ -1,13 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss';
 import CalculatorService from './services/CalculatorService';
 
 function App() {
+  const DEFAULT_THEME = 1;
+  let isDarkPreference = (window?.matchMedia && window?.matchMedia('(prefers-color-scheme: dark)').matches);
+  let isLightPreference = (window?.matchMedia && window?.matchMedia('(prefers-color-scheme: light)').matches);
   const [previousValue, setPreviousValue] = useState();
   const [currentValue, setCurrentValue] = useState(399981);
-  const [theme, setTheme] = useState(1);
+  // NOTE: initially matches the 'prefers-color-scheme' (3 if dark, 1 otherwise [default])
+  // NOTE: due to the binary nature of dark/light preference, currently the only way to view theme-2 is manually
+  const [theme, setTheme] = useState((isDarkPreference ? 3 : DEFAULT_THEME));
   // NOTE: using a singleton to keep React from losing state w/in the calculator
   const calculator = CalculatorService.getInstance();
+
+  useEffect(() => {
+    const darkModeToggle = e => { if (e.matches) { setTheme(3) } };
+    const lightModeToggle = e => { if (e.matches) { setTheme(1)} };
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', darkModeToggle);
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', lightModeToggle);
+    return function clean() {
+      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', darkModeToggle);
+      window.matchMedia('(prefers-color-scheme: light)').removeEventListener('change', lightModeToggle);
+    };
+  });
 
   const handleClick = (input) => {
     if (/^[0-9.]$/.test(input)) {

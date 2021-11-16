@@ -21,14 +21,14 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 Users should be able to:
 
 - See the size of the elements adjust based on their device's screen size
-- Perform mathmatical operations like addition, subtraction, multiplication, and division
+- Perform mathematical operations like addition, subtraction, multiplication, and division
 - Adjust the color theme based on their preference
 - **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
 ### Screenshots
-![Theme 1 Screenshot](./public/screenshots/screenshot-theme1.png)
-![Theme 2 Screenshot](./public/screenshots/screenshot-theme2.png)
-![Theme 3 Screenshot](./public/screenshots/screenshot-theme3.png)
+![Theme 1 Screenshot](./public/screenshots/screenshot-theme1.png width=400)
+![Theme 2 Screenshot](./public/screenshots/screenshot-theme2.png width=400)
+![Theme 3 Screenshot](./public/screenshots/screenshot-theme3.png width=400)
 
 ### Links
 
@@ -49,7 +49,7 @@ Users should be able to:
 ### What I learned
 
 CSS Flexbox and Grid.  This project provided a great opportunity to practice 
-picture-perfect web design, SCSS and advanced layout techniques with CSS.  This is was also a great opportunity to build out a complex class using TDD.  This also provided good practice into paying close attention to the build output in order to tidy up Sass and React build warnings for a polished final product.
+picture-perfect web design, SCSS and advanced layout techniques with CSS.  I learned about 'prefers-color-scheme' and a few methods to get and react to changes.  This is was also a great opportunity to build out a complex class using TDD.  This also provided good practice into paying close attention to the build output in order to tidy up Sass and React build warnings for a polished final product.
 
 ### Continued development
 
@@ -61,3 +61,4 @@ that leave room for improvement.
   - provided a quick solution to turn a testable Calculator class into a React-friendly CalculatorService, singleton object with no loss in functionality and only very minor changes in the TDD tests and within the class/service itself
 - [Build A Calculator With JavaScript Tutorial](https://www.youtube.com/watch?v=j59qQ7YWLxw)
   - useful tips to iron out a few commmon pitfalls of implementing this very same type of application...no copy-paste here
+- [Stack Overflow: How do I detect dark mode using JavaScript?](https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript)
