@@ -47,6 +47,7 @@
 
                 .theme-label {
                     font-size: .7em;
+                    cursor: pointer;
                 }
             }
 
@@ -169,5 +170,11 @@
                 top: 3px;
             }
         }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .calculator-container {
+        width: 375px;
     }
 }
