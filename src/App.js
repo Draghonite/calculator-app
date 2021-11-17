@@ -51,19 +51,19 @@ function App() {
   };
 
   return (
-    <div className={`app theme${theme}`}>
+    <div className={`app theme${theme}`} role="main">
       <div className="calculator-container">
         <header className="calculator-header">
-            <div className="app-name">calc</div>
+            <h1 className="app-name">calc</h1>
             <div className="theme-chooser">
                 <span className="theme-chooser-label">THEME</span>
                 <div className="theme-controls">
-                  <div className="theme-options">
+                  <label id="themeOptions" className="theme-options">
                     <span className="theme-label" onClick={() => handleThemeChange(1)}>1</span>
                     <span className="theme-label" onClick={() => handleThemeChange(2)}>2</span>
                     <span className="theme-label" onClick={() => handleThemeChange(3)}>3</span>
-                  </div>
-                  <input type="range" min="1" max="3" value={theme} onChange={(evt) => handleThemeChange(evt.target.value)} list="tickmarks" />
+                  </label>
+                  <input type="range" min="1" aria-valuemin="1" max="3" aria-valuemax="3" value={theme} aria-valuenow={theme} onChange={(evt) => handleThemeChange(evt.target.value)} aria-labeledby="themeOptions" />
                 </div>
             </div>
         </header>
