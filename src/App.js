@@ -51,48 +51,50 @@ function App() {
   };
 
   return (
-    <div className={`app theme${theme}`} role="main">
+    <div className={`app theme${theme}`}>
       <div className="calculator-container">
         <header className="calculator-header">
             <h1 className="app-name">calc</h1>
             <div className="theme-chooser">
                 <span className="theme-chooser-label">THEME</span>
                 <div className="theme-controls">
-                  <label id="themeOptions" className="theme-options">
+                  <label id="theme-options" className="theme-options">
                     <span className="theme-label" onClick={() => handleThemeChange(1)}>1</span>
                     <span className="theme-label" onClick={() => handleThemeChange(2)}>2</span>
                     <span className="theme-label" onClick={() => handleThemeChange(3)}>3</span>
                   </label>
-                  <input type="range" min="1" aria-valuemin="1" max="3" aria-valuemax="3" value={theme} aria-valuenow={theme} onChange={(evt) => handleThemeChange(evt.target.value)} aria-labeledby="themeOptions" />
+                  <input type="range" min="1" aria-valuemin="1" max="3" aria-valuemax="3" value={theme} aria-valuenow={theme} onChange={(evt) => handleThemeChange(evt.target.value)} aria-label="Theme Options" />
                 </div>
             </div>
         </header>
 
-        <div className="calculator-results">
-          <span className="previous-value">{previousValue}</span>
-          <span className="current-value">{currentValue}</span>
-        </div>
+        <section role="main">
+          <div className="calculator-results">
+            <span className="previous-value">{previousValue}</span>
+            <h2 className="current-value">{currentValue}</h2>
+          </div>
 
-        <div className="calculator-buttons">
-          <button type="button" className="seven" onClick={() => handleClick(7)}>7</button>
-          <button type="button" className="eight" onClick={() => handleClick(8)}>8</button>
-          <button type="button" className="nine" onClick={() => handleClick(9)}>9</button>
-          <button type="button" className="delete" onClick={() => handleClick('delete')}>DEL</button>
-          <button type="button" className="four" onClick={() => handleClick(4)}>4</button>
-          <button type="button" className="five" onClick={() => handleClick(5)}>5</button>
-          <button type="button" className="six" onClick={() => handleClick(6)}>6</button>
-          <button type="button" className="plus" onClick={() => handleClick('+')}>+</button>
-          <button type="button" className="one" onClick={() => handleClick(1)}>1</button>
-          <button type="button" className="two" onClick={() => handleClick(2)}>2</button>
-          <button type="button" className="three" onClick={() => handleClick(3)}>3</button>
-          <button type="button" className="minus" onClick={() => handleClick('-')}>-</button>
-          <button type="button" className="period" onClick={() => handleClick('.')}>.</button>
-          <button type="button" className="zero" onClick={() => handleClick(0)}>0</button>
-          <button type="button" className="divide" onClick={() => handleClick('/')}>/</button>
-          <button type="button" className="multiply" onClick={() => handleClick('x')}>x</button>
-          <button type="button" className="reset" onClick={() => handleClick('reset')}>RESET</button>
-          <button type="button" className="equals" onClick={() => handleClick('=')}>=</button>
-        </div>
+          <div className="calculator-buttons">
+            <button type="button" className="seven" onClick={() => handleClick(7)}>7</button>
+            <button type="button" className="eight" onClick={() => handleClick(8)}>8</button>
+            <button type="button" className="nine" onClick={() => handleClick(9)}>9</button>
+            <button type="button" className="delete" onClick={() => handleClick('delete')}>DEL</button>
+            <button type="button" className="four" onClick={() => handleClick(4)}>4</button>
+            <button type="button" className="five" onClick={() => handleClick(5)}>5</button>
+            <button type="button" className="six" onClick={() => handleClick(6)}>6</button>
+            <button type="button" className="plus" onClick={() => handleClick('+')}>+</button>
+            <button type="button" className="one" onClick={() => handleClick(1)}>1</button>
+            <button type="button" className="two" onClick={() => handleClick(2)}>2</button>
+            <button type="button" className="three" onClick={() => handleClick(3)}>3</button>
+            <button type="button" className="minus" onClick={() => handleClick('-')}>-</button>
+            <button type="button" className="period" onClick={() => handleClick('.')}>.</button>
+            <button type="button" className="zero" onClick={() => handleClick(0)}>0</button>
+            <button type="button" className="divide" onClick={() => handleClick('/')}>/</button>
+            <button type="button" className="multiply" onClick={() => handleClick('x')}>x</button>
+            <button type="button" className="reset" onClick={() => handleClick('reset')}>RESET</button>
+            <button type="button" className="equals" onClick={() => handleClick('=')}>=</button>
+          </div>
+        </section>
       </div>
     </div>
   );
